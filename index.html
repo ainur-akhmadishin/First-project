@@ -22,6 +22,7 @@
                 </a>
             </div>
 
+
             <div class="header-page__service">
                 <label for="btn" class="header-page__label">Оставить заявку</label>
                 <button type="button" class="button button--visible" id="btn">
@@ -34,10 +35,10 @@
             </div>
         </section>
     </header>
-    
-    
-    
-   
+
+
+
+
 
 
     <main class="main-page container">
@@ -87,7 +88,7 @@
 
 
 
-        <section class="brend">
+        <section class="brend" id="brends">
             <div class="header">
                 <h2 class="header__title">Ремонт техники различных брендов</h2>
             </div>
@@ -155,7 +156,7 @@
         </section>
 
         
-        <section class="tech">
+        <section class="tech" id="tech">
             <div class="header">
                 <h2 class="header__title">Ремонт различных видов техники</h2>
             </div>
@@ -211,7 +212,7 @@
 
         
 
-        <section class="price">
+        <section class="price" id="price">
             <div class="header">
                 <h2 class="header__title">Цены на услуги</h2>
             </div>
@@ -325,111 +326,105 @@
 
 
 
-        <article class="offer">
+        <article class="offer" id="offer">
             <p class="offer__text">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</p>
             <a href="#" class="offer__link">Получить коммерческое предложение</a>
         </article>
-        
-        
-        
+
+
+
         <aside class="menu side-menu">
-        <section class="menu__buttons--header">
-            <button type="button" class="button button__close button__close--menu" id="menu-close">
-                <span></span>
-            </button>
-            <div class="logo">
-                <a href="#" class="logo__link">
-                    <img src="./img/logo.svg" width="90" height="50" class="logo__img" alt="Логотип">
-                </a>
-            </div>
-            <button type="button" class="button" id="btn2">
-                <img src="./img/search.png" width="16" height="20" alt="Статус ремонта">
-            </button>
-        </section>
+            <section class="side-menu__wrapper">
+                <section class="menu__buttons--header">
+                    <button type="button" class="button button__close button__close--menu" id="menu-close">
+                        <span></span>
+                    </button>
+                    <div class="logo">
+                        <a href="#" class="logo__link">
+                            <img src="./img/logo.svg" width="90" height="50" class="logo__img" alt="Логотип">
+                        </a>
+                    </div>
+                    <button type="button" class="button" id="btn2">
+                        <img src="./img/search.png" width="16" height="20" alt="Статус ремонта">
+                    </button>
+                </section>
 
 
 
-        <nav class="main-menu">
-            <ul class="main-menu__list">
-                <li class="main-menu__item">
-                    <a class="main-menu__link main-menu__link--active" href="#">Ремонт техники</a>
-                </li>
+                <nav class="main-menu">
+                    <ul class="main-menu__list">
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#offer">Ремонт техники</a>
+                        </li>
 
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Услуги и сервисы</a>
-                </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#brends">Услуги и сервисы</a>
+                        </li>
 
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Корпоративным клиентам</a>
-                </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#tech">Корпоративным клиентам</a>
+                        </li>
 
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Продавцам техники</a>
-                </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#price">Продавцам техники</a>
+                        </li>
 
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Партнерам</a>
-                </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#offer">Партнерам</a>
+                        </li>
 
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Производителям</a>
-                </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#offer">Производителям</a>
+                        </li>
 
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Наши сервисные центры</a>
-                </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#tech">Наши сервисные центры</a>
+                        </li>
 
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Контакты</a>
-                </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__link" href="#offer">Контакты</a>
+                        </li>
 
-            </ul>
-        </nav>
+                    </ul>
 
-
-        <section class="feedback">
-            <div class="feedback__buttons">
-                <button type="button" class="button button--call">
-                    <img src="./img/phone.png" width="17" height="17" alt="Позвонить">
-                </button>
-                <button type="button" class="button button--message">
-                    <img src="./img/message.png" width="20" height="20" alt="Написать сообщение">
-                </button>
-                <button type="button" class="button">
-                    <img src="./img/user.png" width="20" height="18" alt="Войти">
-                </button>
-            </div>
-        </section>
-
-        <section class="feedback">
-            <div class="feedback__buttons">
-                <button type="button" class="button button--hidden">
-                    <img src="./img/phone.png" width="17" height="17" alt="Позвонить">
-                </button>
-                <button type="button" class="button button--hidden">
-                    <img src="./img/message.png" width="20" height="20" alt="Написать сообщение">
-                </button>
-                <button type="button" class="button button--hidden">
-                    <img src="./img/user.png" width="20" height="18" alt="Войти">
-                </button>
-            </div>
-        </section>
+                    <section class="feedback">
+                        <div class="feedback__buttons">
+                            <button type="button" class="button button--call">
+                                <img src="./img/phone.png" width="17" height="17" alt="Позвонить">
+                            </button>
+                            <button type="button" class="button button--message">
+                                <img src="./img/message.png" width="20" height="20" alt="Написать сообщение">
+                            </button>
+                            <button type="button" class="button">
+                                <img src="./img/user.png" width="20" height="18" alt="Войти">
+                            </button>
+                        </div>
+                    </section>
+                </nav>
 
 
-        <a href="mailto:mail@cps.com" class="mail-to">mail@cps.com</a>
-        <a href="tel:88008908900" class="tel-number">8 800 890 8900</a>
-        <div class="menu__buttons--footer">
-            <button type="button" class="button-lang button-lang--active">RU</button>
-            <button type="button" class="button-lang">EN</button>
-            <button type="button" class="button-lang">CH</button>
-        </div>
 
-    </aside>
+
+                
+
+
+
+
+                <a href="mailto:mail@cps.com" class="mail-to">mail@cps.com</a>
+                <a href="tel:88008908900" class="tel-number">8 800 890 8900</a>
+                <div class="menu__buttons--footer">
+                    <button type="button" class="button-lang button-lang--active">RU</button>
+                    <button type="button" class="button-lang">EN</button>
+                    <button type="button" class="button-lang">CH</button>
+                </div>
+            </section>
+
+        </aside>
 
     </main>
- 
 
-   
+
+
 
     <footer class="footer-page container">
         <p class="footer-page__text">© 2019 CPS<br>Разработано командой Apesong</p>
@@ -437,10 +432,10 @@
         <p class="footer-page__text">Информация, размещенная на данной странице, не является публичной офертой</p>
 
     </footer>
-    
-    
-    
-     
+
+
+
+
 
 
 
@@ -448,25 +443,29 @@
     
 
     <section class="modal modal__callback">
-        <div class="modal__wrapper">
-            <button type="button" class="button button__close button__close--modal" id="closeCallback"></button>
+        <div class="modal__wrapper modal__wrapper-call">
+            <section class="modal__wrapper--callback">
+                <button type="button" class="button button__close button__close--modal" id="closeCallback"></button>
 
-            <h3 class="modal__title">Заказать звонок</h3>
+                <h3 class="modal__title">Заказать звонок</h3>
 
-            <form action="" method="" class="form">
-                <input type="tel" placeholder="Телефон" class="form__input">
-            </form>
+                <form action="" method="" class="form">
+                    <input type="tel" placeholder="Телефон" class="form__input">
+                </form>
 
-            <p class="modal__text">
-                Нажимая “отправить”, вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="#">политикой конфиденциальности</a>
-            </p>
-            <button type="button" class="button modal__button">Отправить</button>
+                <p class="modal__text">
+                    Нажимая “отправить”, вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="#">политикой конфиденциальности</a>
+                </p>
+                <button type="button" class="button modal__button">Отправить</button>
+            </section>
         </div>
+
 
     </section>
 
     <section class="modal modal__feedback">
         <div class="modal__wrapper">
+           <section class="modal__wrapper--feedback">
             <button type="button" class="button button__close button__close--modal" id="closeFeedback"></button>
 
             <h3 class="modal__title">Обратная связь</h3>
@@ -482,6 +481,7 @@
                 Нажимая “отправить”, вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="#">политикой конфиденциальности</a>
             </p>
             <button type="button" class="button modal__button">Отправить</button>
+            </section>
         </div>
 
     </section>
