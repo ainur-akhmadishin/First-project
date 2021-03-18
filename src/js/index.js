@@ -1,9 +1,13 @@
-import 'swiper/components/pagination/pagination.scss';
 import 'swiper/swiper.scss';
 import '../scss/style.scss';
 
+//import SwiperCore, { Pagination } from 'swiper';
+//
+//  // configure Swiper to use modules
+//  SwiperCore.use([Pagination]);
 
-import Swiper from 'swiper/bundle';
+//import Swiper from 'swiper/bundle';
+import Swiper from 'swiper/bundle'
 
 let flag = false;
 
@@ -128,6 +132,7 @@ function blurBodyClose() {
     const offer = document.querySelector('.offer');
     const footerPage = document.querySelector('.footer-page');
     const sideMenu = document.querySelector('.side-menu');
+    const feedback = document.querySelector('.feedback');
 
     header.classList.remove('body-blur');
     pageWrapper.classList.remove('body-blur');
@@ -136,6 +141,13 @@ function blurBodyClose() {
     price.classList.remove('body-blur');
     offer.classList.remove('body-blur');
     footerPage.classList.remove('body-blur');
+    feedback.style.display = 'block';
+
+    document.body.classList.remove('fixed');
+    document.querySelector('.side-menu').classList.remove('fixed');
+    document.querySelector('.side-menu').style.overflow = "visible";
+    document.querySelector('.side-menu__wrapper').classList.remove('absolute');
+
     if (document.documentElement.clientWidth >= 1440) {
         sideMenu.classList.remove('body-blur');
     }
@@ -153,13 +165,16 @@ buttonMenu.onclick = function () {
     }
     event.stopPropagation();
     btnDisabled('none');
+    document.body.classList.add('fixed');
+    document.querySelector('.side-menu').classList.add('fixed');
+    document.querySelector('.side-menu').style.overflow = 'auto';
+    document.querySelector('.side-menu__wrapper').classList.add('absolute');
 
 }
 
 menuClose.onclick = function () {
-
     menu.classList.remove('side-menu--show');
-    if ((document.documentElement.clientWidth >= 768)) {
+    if (document.documentElement.clientWidth >= 768) {
         document.querySelector('.feedback').classList.remove('feedback--open');
     }
     blurBodyClose();
@@ -167,6 +182,11 @@ menuClose.onclick = function () {
     btnDisabled('auto');
     buttonMessage.style.pointerEvents = 'auto';
     buttonCall.style.pointerEvents = 'auto';
+    document.body.classList.remove('fixed');
+    document.querySelector('.side-menu').classList.remove('fixed');
+    document.querySelector('.side-menu').style.overflow = "visible";
+    document.querySelector('.side-menu__wrapper').classList.remove('absolute');
+    //    document.querySelector('.feedback').style.position = "relative";
 
 }
 
@@ -183,6 +203,7 @@ closeFeedback.onclick = function () {
     btnDisabled('auto');
     buttonMessage.style.pointerEvents = 'auto';
     buttonCall.style.pointerEvents = 'auto';
+    feedback.style.display = 'block';
 
 }
 
@@ -199,6 +220,7 @@ closeCallback.onclick = function () {
     btnDisabled('auto');
     buttonMessage.style.pointerEvents = 'auto';
     buttonCall.style.pointerEvents = 'auto';
+    feedback.style.display = 'block';
 
 }
 
@@ -209,6 +231,10 @@ buttonMessage.onclick = function () {
     message.classList.add('modal__feedback--show');
     window.scrollTo(pageYOffset, 0);
 
+    if ((document.documentElement.clientWidth >= 768) && (document.documentElement.clientWidth < 1440)) {
+        feedback.style.display = 'none';
+    }
+
     if (document.documentElement.clientWidth >= 768) {
         blurBody();
         feedback.classList.add('body-blur');
@@ -217,6 +243,19 @@ buttonMessage.onclick = function () {
     btnDisabled('none');
     buttonMessage.style.pointerEvents = 'none';
     buttonCall.style.pointerEvents = 'none';
+
+    if (document.documentElement.clientWidth < 1440) {
+        document.body.classList.add('fixed');
+        document.querySelector('.modal__feedback').classList.add('fixed');
+        document.querySelector('.modal__feedback').style.overflow = 'auto';
+        document.querySelector('.modal__wrapper--feedback').classList.add('absolute');
+    }
+    if (document.documentElement.clientWidth >= 1440) {
+        document.body.style.overflow = 'hidden';
+
+    }
+
+
 
 }
 
@@ -227,6 +266,9 @@ buttonCall.onclick = function () {
     menu.classList.remove('side-menu--show');
     message.classList.add('modal__callback--show');
     window.scrollTo(pageYOffset, 0);
+    if ((document.documentElement.clientWidth >= 768) && (document.documentElement.clientWidth < 1440)) {
+        feedback.style.display = 'none';
+    }
 
     if (document.documentElement.clientWidth >= 768) {
         blurBody();
@@ -236,6 +278,20 @@ buttonCall.onclick = function () {
     buttonMessage.style.pointerEvents = 'none';
     buttonCall.style.pointerEvents = 'none';
     event.stopPropagation();
+
+    if (document.documentElement.clientWidth < 1440) {
+        document.body.classList.add('fixed');
+        document.querySelector('.modal__callback').classList.add('fixed');
+        document.querySelector('.modal__callback').style.overflow = 'auto';
+        document.querySelector('.modal__wrapper--callback').classList.add('absolute');
+    }
+
+    if (document.documentElement.clientWidth >= 1440) {
+        document.body.style.overflow = 'hidden';
+
+    }
+
+
 }
 
 
@@ -332,5 +388,29 @@ function btnDisabled(a) {
 
     for (let n = 0; n < menuLink.length; n++) {
         menuLink[n].style.pointerEvents = a;
+    }
+}
+
+document.querySelector('.main-menu__link').classList.add('main-menu__link--active');
+
+document.addEventListener('click', filter, false)
+
+function filter(e) {
+    if (e.target.className === 'main-menu__link') {
+        let links = document.querySelectorAll('.main-menu__link');
+        for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove('main-menu__link--active');
+        }
+
+        blurBodyClose();
+        menu.classList.remove('side-menu--show');
+        document.querySelector('.feedback').classList.remove('feedback--open');
+        btnDisabled('auto');
+        btnDisabled('auto');
+        buttonMessage.style.pointerEvents = 'auto';
+        buttonCall.style.pointerEvents = 'auto';
+        e.target.classList.add('main-menu__link--active')
+        document.location.href = e.target.href;
+        document.body.style.position = 'static';
     }
 }
